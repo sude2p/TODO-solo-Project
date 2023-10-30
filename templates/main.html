@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do Items</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200&display=swap" rel="stylesheet">
+
+    <style>
+        body { background-color: rgb(193, 199, 199);
+                font-family: 'Roboto Slab', serif;
+                padding-top: 200px;
+
+        }
+        
+        .container{
+            max-width:550px;
+           
+            margin: auto;
+            background-color: rgb(191, 236, 171);
+            
+
+        }
+    </style>
+
+
+</head>
+<body>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+        {% endif %}
+
+    <div class="container">
+
+            {%block content%}
+
+            
+
+            {%endblock content%}
+    </div>   
+
+</body>
+</html>

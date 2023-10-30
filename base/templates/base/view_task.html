@@ -1,0 +1,10 @@
+{%extends 'main.html'%}
+{% block content %}
+<h1>View Task</h1>
+
+<form action="">
+    {{form.as_p}}
+    <a href="{%url 'home'%}"><input type="button" value="back"></a>
+    
+</form>
+{% endblock content %}
