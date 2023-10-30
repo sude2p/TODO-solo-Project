@@ -9,6 +9,7 @@ class UserLogin(ModelForm):
         model = User
         fields = ['username','password']
         
+    #------for password functionality-------#    
     def __init__(self, *args, **kwargs):
         super(UserLogin, self).__init__(*args, **kwargs)
 
