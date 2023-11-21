@@ -15,7 +15,7 @@ from base.urls import *
 # Create your views here.
 
 def userLogin(request):
-    userform = UserLogin
+    userform = UserLogin()
     context = {'form': userform}
     if request.user.is_authenticated:
         return redirect('home')

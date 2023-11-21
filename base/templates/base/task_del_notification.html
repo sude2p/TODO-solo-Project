@@ -5,7 +5,7 @@
 
     {%csrf_token%}
 
-    <p>Are you sure you want to delete?"{{project}}"</p>
+    <p>Are you sure you want to delete?{{project.task_title}}</p>
 
     <input type="submit" value="Delete">
     <a href="{%url 'home'%}"><input type="button" value="Back"></a>

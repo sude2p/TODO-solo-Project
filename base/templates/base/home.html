@@ -3,10 +3,37 @@
 {% block content%}
 
 
-<h2>Welcome {{user}}</h2>
+<h2 style="text-align: center;">Welcome {{user}}</h2>
+<a href="{%url 'createTask'%}">Add Task</a>
 
 <h1>To Do List</h1>
-<a href="{%url 'createTask'%}">Add Task</a>
+<br>
+<table>
+    <tr>
+        <th>Task</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        
+    </tr>
+
+    {% for item in project %}
+
+    <tr>
+        <td>{{item.task_title}}</td>
+        <td><a href="{%url 'viewTask' item.id%}">View</a></td>
+        <td><a href="{%url 'updateTask' item.id%}">Edit</a></td>
+        <td><a href="{%url 'deleteTask' item.id%}">Delete</a></td>
+        
+        
+        
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+
 
 
 <br>
@@ -25,29 +52,6 @@
 <br>
 <br>
 
-<table>
-    <tr>
-        <th>Task</th>
-        <th></th>
-        <th></th>
-        <th></th>
-        
-    </tr>
 
-    {% for item in project %}
-
-    <tr>
-        <td>{{item.task_title}}</td>
-        <!-- <td><a href="{%url 'viewTask' item.id%}">View</a></td> -->
-        <td><a href="{%url 'updateTask' item.id%}">Edit</a></td>
-        <td><a href="{%url 'deleteTask' item.id%}">Delete</a></td>
-        
-        
-        
-    </tr>
-
-    {% endfor %}
-
-</table>
 
 {%endblock content%}
